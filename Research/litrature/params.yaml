@@ -1,0 +1,137 @@
+paper:
+  id: P001
+  title: Enhancing Sales Forecasting Accuracy through Integrated ERP and CRM using Artificial Intelligence
+  year: 2024
+  publisher: IEEE
+
+problem:
+  domain: Sales Forecasting
+  application: CRM
+
+dataset:
+  source: ERP + CRM Data
+  type: Structured
+
+machine_learning:
+  algorithms:
+    - Artificial Intelligence
+    - Predictive Analytics
+
+evaluation:
+  metrics:
+    - Forecast Accuracy
+    - Revenue Prediction
+
+limitations:
+  - No deal closure prediction
+  - No dashboard
+  - No explainable AI
+
+our_improvement:
+  - Deal closure prediction
+  - Revenue forecasting
+  - Dashboard
+  - Explainable AI
+
+paper:
+  id: P002
+  title: Using Supervised Machine Learning for B2B Sales Forecasting
+  year: 2022
+
+dataset:
+  source: RFQ Dataset
+
+algorithms:
+  - Random Forest
+  - Gradient Boosting
+
+task:
+  - Sales Forecasting
+
+metrics:
+  - RMSE
+  - MAE
+
+limitations:
+  - No CRM dashboard
+  - No classification
+  - No explainability
+
+our_improvement:
+  - CRM integration
+  - Deal prediction
+  - Dashboard
+
+paper:
+  id: P003
+  title: SentiTSMixer
+  year: 2025
+
+dataset:
+  source: Customer Reviews
+
+algorithms:
+  - Deep Learning
+  - Transformer
+
+task:
+  - Time Series Forecasting
+
+metrics:
+  - MAE
+  - RMSE
+
+limitations:
+  - Retail only
+  - No CRM
+
+our_improvement:
+  - CRM analytics
+  - Revenue prediction
+
+paper:
+  id: P004
+  title: Optimizing B2B CRM and Sales Forecasting with Graph Convolutional Networks
+  year: 2025
+
+dataset:
+  source: CRM
+
+algorithms:
+  - GCN
+  - Graph Neural Network
+
+task:
+  - Forecasting
+
+limitations:
+  - High computation
+  - Complex implementation
+
+our_improvement:
+  - Lightweight ML
+  - Interactive Dashboard
+
+paper:
+  id: P005
+  title: Leveraging AI-Driven Sales Intelligence to Revolutionize CRM Forecasting
+  year: 2025
+
+dataset:
+  source: CRM
+
+algorithms:
+  - Machine Learning
+  - Predictive Analytics
+
+task:
+  - Sales Intelligence
+
+limitations:
+  - Conceptual
+  - No implementation
+
+our_improvement:
+  - Full implementation
+  - Dashboard
+  - Explainable AI
