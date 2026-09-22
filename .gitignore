@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.env
+data/raw/*.csv
+models/*.joblib
+models/*.jsonsrc/sales_forecasting/data/raw/*.csv

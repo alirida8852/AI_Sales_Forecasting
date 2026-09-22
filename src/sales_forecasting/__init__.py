@@ -1,0 +1,1 @@
+"""Sales forecasting and pipeline analytics package."""
