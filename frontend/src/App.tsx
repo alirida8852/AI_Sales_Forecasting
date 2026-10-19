@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useEffect, useState, type FormEvent } from 'react'
+=======
+import { useEffect, useState } from 'react'
+>>>>>>> origin/najya-work
 import './App.css'
 
 type PipelineSummary = {
@@ -28,6 +32,7 @@ type RevenueForecast = {
   expected_monthly_revenue: number
   method: string
 }
+<<<<<<< HEAD
 type IntelligenceAnswer = {
   intent: string
   status: string
@@ -51,6 +56,8 @@ type IntelligenceAnswer = {
   sources: Array<{ type: string; source?: string; document_id?: string; title?: string; excerpt?: string }>
   next_action: string | null
 }
+=======
+>>>>>>> origin/najya-work
 
 const fallbackSummary: PipelineSummary = {
   total_opportunities: 8800,
@@ -89,10 +96,13 @@ function App() {
   const [search, setSearch] = useState('')
   const [revenueForecast, setRevenueForecast] = useState<RevenueForecast | null>(null)
   const [forecastLoading, setForecastLoading] = useState(false)
+<<<<<<< HEAD
   const [intelligenceQuestion, setIntelligenceQuestion] = useState('')
   const [intelligenceAnswer, setIntelligenceAnswer] = useState<IntelligenceAnswer | null>(null)
   const [intelligenceLoading, setIntelligenceLoading] = useState(false)
   const [intelligenceError, setIntelligenceError] = useState('')
+=======
+>>>>>>> origin/najya-work
 
   useEffect(() => {
     fetch(apiUrl)
@@ -127,6 +137,7 @@ function App() {
       .finally(() => setForecastLoading(false))
   }, [view, revenueForecast])
 
+<<<<<<< HEAD
   function submitIntelligenceQuestion(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const question = intelligenceQuestion.trim()
@@ -147,6 +158,8 @@ function App() {
       .finally(() => setIntelligenceLoading(false))
   }
 
+=======
+>>>>>>> origin/najya-work
   const winRate = Math.round((summary.won_opportunities / Math.max(summary.won_opportunities + summary.lost_opportunities, 1)) * 100)
 
   return (
@@ -169,12 +182,15 @@ function App() {
       <section className="content" id="overview">
         <header className="topbar"><div><p className="eyebrow">MONDAY, SEPTEMBER 22, 2026</p><h1>Revenue command center</h1></div><div className="top-actions"><span className={connected ? 'connection live' : 'connection'}><i />{connected ? 'Live data' : 'Demo data'}</span><button className="icon-button" aria-label="Notifications">⌁</button><button className="help-button">?</button></div></header>
         <div className="hero-line"><div><h2>Good morning, Najya.</h2><p>Here is what deserves your attention today.</p></div><button className="primary-button">+ Add opportunity</button></div>
+<<<<<<< HEAD
         <section className="intelligence-panel" aria-label="Sales intelligence">
           <div className="intelligence-heading"><div><p className="eyebrow">SALES INTELLIGENCE</p><h2>Ask the company signal</h2><p>Search verified pipeline data and approved company documents.</p></div><span className="intelligence-badge">GROUNDED</span></div>
           <form className="intelligence-form" onSubmit={submitIntelligenceQuestion}><input value={intelligenceQuestion} onChange={(event) => setIntelligenceQuestion(event.target.value)} placeholder="Ask about pipeline, revenue, or a sales playbook..." aria-label="Ask a sales intelligence question" /><button className="primary-button" type="submit" disabled={intelligenceLoading}>{intelligenceLoading ? 'Searching...' : 'Ask signal'}</button></form>
           {intelligenceError && <p className="intelligence-error">{intelligenceError}</p>}
           {intelligenceAnswer && <div className="intelligence-answer"><div><span className="answer-status">{intelligenceAnswer.status.replace('_', ' ')}</span><p>{intelligenceAnswer.answer}</p>{intelligenceAnswer.data && <div className="answer-data">{Object.entries(intelligenceAnswer.data).filter(([key]) => key !== 'results' && key !== 'stages').map(([key, value]) => typeof value === 'number' && <span key={key}><small>{key.replaceAll('_', ' ')}</small><strong>{key.includes('rate') ? `${Math.round(value * 100)}%` : value.toLocaleString()}</strong></span>)}</div>}{intelligenceAnswer.data?.stages && <div className="stage-answer">{Object.entries(intelligenceAnswer.data.stages).map(([stage, count]) => <span key={stage}><small>{stage}</small><strong>{count.toLocaleString()}</strong></span>)}</div>}{intelligenceAnswer.data?.results && <div className="intelligence-results">{intelligenceAnswer.data.results.map((result) => <div className="intelligence-result" key={result.opportunity_id}><strong>{result.opportunity_id}</strong><span>{result.account ?? 'Unassigned account'}</span><span>{result.sales_agent}</span><span className={`table-stage ${result.deal_stage.toLowerCase()}`}>{result.deal_stage}</span><span>{formatCurrency(result.close_value)}</span></div>)}</div>}{intelligenceAnswer.next_action && <div className="next-action"><small>Suggested next action</small><span>{intelligenceAnswer.next_action}</span></div>}</div><div className="answer-sources"><small>Sources</small>{intelligenceAnswer.sources.length ? intelligenceAnswer.sources.map((source, index) => <div className="source-item" key={`${source.type}-${source.source ?? source.document_id}-${index}`}><span>{source.title ?? source.source ?? source.document_id ?? source.type}</span>{source.excerpt && <small>{source.excerpt}</small>}</div>) : <span>No supporting source</span>}</div></div>}
         </section>
+=======
+>>>>>>> origin/najya-work
         {view === 'pipeline' && <section className="pipeline-details" id="pipeline-details">
           <div className="pipeline-details-heading"><div><p className="eyebrow">PIPELINE WORKBENCH</p><h2>Opportunity details</h2><p>Search every deal and prioritize the next conversation with model-guided signals.</p></div><button className="outline-button" onClick={() => setView('overview')}>← Back to overview</button></div>
           <div className="pipeline-toolbar"><label className="search-field"><span>⌕</span><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search account, product, owner..." /></label><select value={stageFilter} onChange={(event) => setStageFilter(event.target.value)}><option>All stages</option><option>Prospecting</option><option>Engaging</option><option>Won</option><option>Lost</option></select></div>
