@@ -1,0 +1,53 @@
+[
+  {
+    "seed": "seed_20261121",
+    "checks": {
+      "opportunity_ids_unique": true,
+      "split_has_one_row_per_opportunity": true,
+      "all_opportunities_assigned": true,
+      "account_groups_do_not_cross_splits": true,
+      "heldout_companies_count_18": true,
+      "one_feature_row_per_opportunity_landmark": true,
+      "model_predictor_allowlist_excludes_outcomes": true,
+      "restricted_truth_file_present_for_governance_awareness": true,
+      "company_count_90": true,
+      "opportunity_count_9000": true
+    },
+    "passed": 10,
+    "total": 10
+  },
+  {
+    "seed": "seed_20261122",
+    "checks": {
+      "opportunity_ids_unique": true,
+      "split_has_one_row_per_opportunity": true,
+      "all_opportunities_assigned": true,
+      "account_groups_do_not_cross_splits": true,
+      "heldout_companies_count_18": true,
+      "one_feature_row_per_opportunity_landmark": true,
+      "model_predictor_allowlist_excludes_outcomes": true,
+      "restricted_truth_file_present_for_governance_awareness": true,
+      "company_count_90": true,
+      "opportunity_count_9000": true
+    },
+    "passed": 10,
+    "total": 10
+  },
+  {
+    "seed": "seed_20261123",
+    "checks": {
+      "opportunity_ids_unique": true,
+      "split_has_one_row_per_opportunity": true,
+      "all_opportunities_assigned": true,
+      "account_groups_do_not_cross_splits": true,
+      "heldout_companies_count_18": true,
+      "one_feature_row_per_opportunity_landmark": true,
+      "model_predictor_allowlist_excludes_outcomes": true,
+      "restricted_truth_file_present_for_governance_awareness": true,
+      "company_count_90": true,
+      "opportunity_count_9000": true
+    },
+    "passed": 10,
+    "total": 10
+  }
+]

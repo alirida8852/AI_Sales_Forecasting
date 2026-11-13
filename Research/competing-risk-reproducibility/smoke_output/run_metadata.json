@@ -1,0 +1,38 @@
+{
+  "created_utc": "2026-11-13T18:31:06.935239+00:00",
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "scikit_learn": "1.8.0",
+  "pipeline_status": "reference_reimplementation_not_exact_historical_reproduction",
+  "interval_edges_days": [
+    0,
+    30,
+    60,
+    90,
+    120,
+    150,
+    180,
+    210,
+    240,
+    270,
+    300,
+    330,
+    360,
+    365
+  ],
+  "horizons_days": [
+    90,
+    180,
+    365
+  ],
+  "model": "sklearn multinomial LogisticRegression C=1.0, max_iter=1500",
+  "run_details": [
+    {
+      "seed": 20261121,
+      "landmark": "day_0",
+      "person_period_rows": 29674,
+      "train_opportunities": 5425
+    }
+  ]
+}

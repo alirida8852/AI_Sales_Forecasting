@@ -1,0 +1,86 @@
+{
+  "created_utc": "2026-11-13T18:33:55.686919+00:00",
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "scikit_learn": "1.8.0",
+  "pipeline_status": "reference_reimplementation_not_exact_historical_reproduction",
+  "interval_edges_days": [
+    0,
+    30,
+    60,
+    90,
+    120,
+    150,
+    180,
+    210,
+    240,
+    270,
+    300,
+    330,
+    360,
+    365
+  ],
+  "horizons_days": [
+    90,
+    180,
+    365
+  ],
+  "model": "sklearn multinomial LogisticRegression C=1.0, max_iter=1500",
+  "run_details": [
+    {
+      "seed": 20261121,
+      "landmark": "day_0",
+      "person_period_rows": 29674,
+      "train_opportunities": 5425
+    },
+    {
+      "seed": 20261121,
+      "landmark": "day_30",
+      "person_period_rows": 24809,
+      "train_opportunities": 5346
+    },
+    {
+      "seed": 20261121,
+      "landmark": "day_60",
+      "person_period_rows": 19949,
+      "train_opportunities": 4494
+    },
+    {
+      "seed": 20261122,
+      "landmark": "day_0",
+      "person_period_rows": 28729,
+      "train_opportunities": 5432
+    },
+    {
+      "seed": 20261122,
+      "landmark": "day_30",
+      "person_period_rows": 23830,
+      "train_opportunities": 5310
+    },
+    {
+      "seed": 20261122,
+      "landmark": "day_60",
+      "person_period_rows": 18977,
+      "train_opportunities": 4353
+    },
+    {
+      "seed": 20261123,
+      "landmark": "day_0",
+      "person_period_rows": 28840,
+      "train_opportunities": 5468
+    },
+    {
+      "seed": 20261123,
+      "landmark": "day_30",
+      "person_period_rows": 23915,
+      "train_opportunities": 5342
+    },
+    {
+      "seed": 20261123,
+      "landmark": "day_60",
+      "person_period_rows": 19077,
+      "train_opportunities": 4342
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "bootstrap_replicates_per_cell": 200,
+  "cluster_types": [
+    "account_id",
+    "company_id"
+  ],
+  "seed_count": 3,
+  "landmarks": 3,
+  "test_partitions": 2,
+  "horizons": [
+    90,
+    180,
+    365
+  ],
+  "causes": [
+    "won",
+    "lost"
+  ],
+  "cells": 108,
+  "caveat": "Intervals are computed separately within each seed and test cell. Company bootstrap has only 18 company clusters in unseen-company tests and should be interpreted as sensitivity analysis. Calibration estimates are weighted point estimates, not bootstrap intervals."
+}

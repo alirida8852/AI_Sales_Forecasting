@@ -1,0 +1,71 @@
+{
+  "pipeline_name": "personalized_competing_risk_reference_v1",
+  "status": "reference_reimplementation_not_exact_historical_reproduction",
+  "dataset_version": "synthetic_sales_simulator_v0.4",
+  "seeds": [
+    20261121,
+    20261122,
+    20261123
+  ],
+  "industries": [
+    "enterprise_software",
+    "saas",
+    "logistics"
+  ],
+  "landmarks": {
+    "day_0": 0,
+    "day_30": 30,
+    "day_60": 60
+  },
+  "interval_edges_days": [
+    0,
+    30,
+    60,
+    90,
+    120,
+    150,
+    180,
+    210,
+    240,
+    270,
+    300,
+    330,
+    360,
+    365
+  ],
+  "horizons_days": [
+    90,
+    180,
+    365
+  ],
+  "outcomes": [
+    "none",
+    "won",
+    "lost"
+  ],
+  "model": {
+    "class": "sklearn.linear_model.LogisticRegression",
+    "C": 1.0,
+    "max_iter": 1500,
+    "solver": "lbfgs"
+  },
+  "preprocessing": {
+    "numeric_imputation": "median",
+    "numeric_scaling": "standard",
+    "categorical_imputation": "most_frequent",
+    "categorical_encoding": "one_hot"
+  },
+  "censoring": {
+    "person_period": "fully_observed_intervals_only",
+    "evaluation": "known_status_diagnostic_not_ipcw"
+  },
+  "split_policy": {
+    "train": "within_company_train_dev",
+    "tests": [
+      "within_company_future_test",
+      "unseen_company_test"
+    ],
+    "group": "account_id"
+  },
+  "restricted_truth_loaded": false
+}

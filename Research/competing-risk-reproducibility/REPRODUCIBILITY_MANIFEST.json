@@ -1,0 +1,156 @@
+{
+  "created_utc": "2026-11-13",
+  "source_dataset_archive": "/mnt/data/ai_sales_synthetic_sales_simulator_v04.zip",
+  "source_dataset_sha256": "aa7600f261de336d12afa77a8d0c1ce1584cdf740697a7e9eb4b3f24578e9412",
+  "original_repository_modified": false,
+  "historical_experiment_code_found": false,
+  "reference_runner_smoke_test": {
+    "seed": 20261121,
+    "landmark": "day_0",
+    "status": "passed",
+    "output_csv": "smoke_output/reference_metrics.csv",
+    "output_metrics_rows": 12,
+    "note": "Known-status Brier diagnostic only; not comparable to historical IPCW Brier."
+  },
+  "known_gaps": [
+    "historical experiment-specific training scripts and exact parameters were not present in archived historical result packages",
+    "this package is a transparent reference reimplementation and must not be represented as an exact reproduction of historical v1/v2/v3 experiments",
+    "only three simulator seeds are currently available",
+    "bootstrap analysis uses 200 replicates and fixed predictions; model-refitting uncertainty is not captured",
+    "independent sigmoid/isotonic cause-specific calibration can violate joint CIF probability coherence; not deployment-ready",
+    "no real CRM validation; findings are limited to the synthetic simulator environment",
+    "revenue forecasting has not yet received a dedicated validated benchmark"
+  ],
+  "runtime_versions": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.8.0",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "dataset_validation": {
+    "status": "passed",
+    "checks_per_seed": 10,
+    "seeds": 3,
+    "total_checks": 30
+  },
+  "pipeline_version": "1.4_training_only_calibration",
+  "ipcw_validation": {
+    "unit_tests": "3/3 passed",
+    "full_run": "passed",
+    "seeds": [
+      20261121,
+      20261122,
+      20261123
+    ],
+    "landmarks": [
+      "day_0",
+      "day_30",
+      "day_60"
+    ],
+    "test_partitions": [
+      "within_company_future_test",
+      "unseen_company_test"
+    ],
+    "horizons_days": [
+      90,
+      180,
+      365
+    ],
+    "causes": [
+      "won",
+      "lost"
+    ],
+    "raw_metric_rows": 108,
+    "summary_rows": 36,
+    "metric": "cause-specific IPCW Brier with training/dev censoring Kaplan-Meier",
+    "weight_floor": 0.05,
+    "important_limit": "reference implementation; not exact historical v2 reproduction"
+  },
+  "prediction_level_audit": {
+    "status": "passed",
+    "prediction_rows": 89655,
+    "unique_keys": true,
+    "key": [
+      "seed",
+      "opportunity_id",
+      "landmark",
+      "horizon_days"
+    ],
+    "test_partitions": {
+      "unseen_company_test": 45555,
+      "within_company_future_test": 44100
+    },
+    "landmarks": {
+      "day_0": 32025,
+      "day_30": 31356,
+      "day_60": 26274
+    },
+    "horizons": {
+      "90": 29885,
+      "180": 29885,
+      "365": 29885
+    },
+    "monotonicity_violations_won": 0,
+    "monotonicity_violations_lost": 0,
+    "maximum_cif_sum": 0.9999999992929062,
+    "train_predictions_included": false
+  },
+  "stage_a2_4": {
+    "status": "completed",
+    "bootstrap_replicates_per_cell": 200,
+    "metric_cells": 108,
+    "cluster_types": [
+      "account_id",
+      "company_id"
+    ],
+    "calibration": "IPCW-weighted logistic calibration intercept and slope",
+    "industry_metric_cells": 324,
+    "industry_reliability_bin_rows": 3240,
+    "limitations": [
+      "fixed-model predictions; no refit within bootstrap",
+      "company bootstrap has only 18 held-out companies per seed",
+      "200 replicates preliminary",
+      "cross-seed average interval endpoints are not pooled CIs"
+    ]
+  },
+  "stage_a2_5": {
+    "status": "completed_preliminary",
+    "calibration_split": "20% account-group holdout from train/dev, per seed and landmark",
+    "methods": [
+      "none",
+      "weighted sigmoid",
+      "weighted isotonic"
+    ],
+    "test_partitions": [
+      "within_company_future_test",
+      "unseen_company_test"
+    ],
+    "mean_ipcw_brier_delta": {
+      "future_sigmoid": -0.00068,
+      "future_isotonic": 0.00049,
+      "unseen_sigmoid": -0.00054,
+      "unseen_isotonic": 0.00076
+    },
+    "joint_cif_exceed_rate": {
+      "uncalibrated": 0.0,
+      "sigmoid_approx": 0.012,
+      "isotonic_approx": 0.054
+    },
+    "limitations": [
+      "three seeds only",
+      "calibration subset is not company-level holdout",
+      "independent cause calibrators can violate CIF simplex",
+      "no bootstrap intervals for calibration deltas"
+    ]
+  },
+  "github_branch_package": {
+    "suggested_branch": "aatif-work",
+    "package_path": "aatif-work/",
+    "original_application_code_included": false,
+    "raw_synthetic_dataset_included": false,
+    "restricted_simulator_truth_included": false,
+    "contains_prediction_level_and_calibration_outputs": true
+  }
+}
